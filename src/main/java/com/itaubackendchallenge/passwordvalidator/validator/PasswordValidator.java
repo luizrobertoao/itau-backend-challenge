@@ -11,24 +11,29 @@ public class PasswordValidator {
 
     public boolean isValid(PasswordRequest password) {
 
+
+        if (password == null || password.getPassword() == null) {
+            return false;
+        }
+
         String passwordValue = password.getPassword();
 
-        if (passwordValue.length() < 9) {
+        if (!passwordValue.matches(".{9,}")) {
             return false;
         }
-        if (!hasDigit(passwordValue)) {
+        if (!passwordValue.matches(".*\\d.*")) {
             return false;
         }
-        if (!hasLowerCase(passwordValue)) {
+        if (!passwordValue.matches(".*[a-z].*")) {
             return false;
         }
-        if (!hasUpperCase(passwordValue)) {
+        if (!passwordValue.matches(".*[A-Z].*")) {
             return false;
         }
-        if (!hasSpecialCharacter(passwordValue)) {
+        if (!passwordValue.matches(".*[!@#$%^&*()-+].*")) {
             return false;
         }
-        if (hasRepeatedCharacters(passwordValue)) {
+        if (passwordValue.matches(".*(.)(.*\\1).*")) {
             return false;
         }
         if (passwordValue.contains(" ")) {
@@ -36,52 +41,4 @@ public class PasswordValidator {
         }
         return true;
     }
-
-    private boolean hasDigit(String str) {
-        for (char c : str.toCharArray()) {
-            if (Character.isDigit(c)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean hasLowerCase(String str) {
-        for (char c : str.toCharArray()) {
-            if (Character.isLowerCase(c)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean hasUpperCase(String str) {
-        for (char c : str.toCharArray()) {
-            if (Character.isUpperCase(c)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean hasSpecialCharacter(String str) {
-        String specialCharacters = "!@#$%^&*()-+";
-        for (char c : str.toCharArray()) {
-            if (specialCharacters.contains(String.valueOf(c))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean hasRepeatedCharacters(String str) {
-        Set<Character> seen = new HashSet<>();
-        for (char c : str.toCharArray()) {
-            if (!seen.add(c)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
 }
