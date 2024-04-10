@@ -9,6 +9,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Password {
-    private String value;
+public class PasswordRequest {
+    private String password;
 }

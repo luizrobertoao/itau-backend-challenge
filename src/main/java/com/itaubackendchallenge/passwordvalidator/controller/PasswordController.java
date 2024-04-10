@@ -1,6 +1,6 @@
 package com.itaubackendchallenge.passwordvalidator.controller;
 
-import com.itaubackendchallenge.passwordvalidator.model.Password;
+import com.itaubackendchallenge.passwordvalidator.model.PasswordRequest;
 import com.itaubackendchallenge.passwordvalidator.service.PasswordService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ public class PasswordController {
     private final PasswordService passwordService;
 
     @PostMapping("/validate")
-    public ResponseEntity<Void> validatePassword(@RequestBody Password password) {
+    public ResponseEntity<Void> validatePassword(@RequestBody PasswordRequest password) {
         passwordService.validate(password);
         return ResponseEntity.ok().build();
     }

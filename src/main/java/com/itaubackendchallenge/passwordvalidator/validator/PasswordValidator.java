@@ -1,6 +1,6 @@
 package com.itaubackendchallenge.passwordvalidator.validator;
 
-import com.itaubackendchallenge.passwordvalidator.model.Password;
+import com.itaubackendchallenge.passwordvalidator.model.PasswordRequest;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
@@ -9,9 +9,9 @@ import java.util.Set;
 @Component
 public class PasswordValidator {
 
-    public boolean isValid(Password password) {
+    public boolean isValid(PasswordRequest password) {
 
-        String passwordValue = password.getValue();
+        String passwordValue = password.getPassword();
 
         if (passwordValue.length() < 9) {
             return false;
