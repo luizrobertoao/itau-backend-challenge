@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/password")
+@RequestMapping("v01/password-validations")
 @RequiredArgsConstructor
 public class PasswordController {
     private final PasswordService passwordService;
 
-    @PostMapping("/validate")
+    @PostMapping
     public ResponseEntity<Void> validatePassword(@RequestBody PasswordRequest password) {
         passwordService.validate(password);
         return ResponseEntity.ok().build();
