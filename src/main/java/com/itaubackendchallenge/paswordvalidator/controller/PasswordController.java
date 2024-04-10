@@ -16,7 +16,7 @@ public class PasswordController {
     private final PasswordService passwordService;
 
     @PostMapping("/validate")
-    public ResponseEntity<Void> validatePasword(@RequestBody Password password) {
+    public ResponseEntity<Void> validatePassword(@RequestBody Password password) {
         passwordService.validate(password);
         return ResponseEntity.ok().build();
     }
