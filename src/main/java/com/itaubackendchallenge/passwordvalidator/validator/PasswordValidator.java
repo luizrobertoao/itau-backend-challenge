@@ -1,6 +1,6 @@
-package com.itaubackendchallenge.paswordvalidator.validator;
+package com.itaubackendchallenge.passwordvalidator.validator;
 
-import com.itaubackendchallenge.paswordvalidator.model.Password;
+import com.itaubackendchallenge.passwordvalidator.model.Password;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;

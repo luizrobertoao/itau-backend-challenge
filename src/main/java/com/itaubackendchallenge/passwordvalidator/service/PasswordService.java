@@ -1,8 +1,8 @@
-package com.itaubackendchallenge.paswordvalidator.service;
+package com.itaubackendchallenge.passwordvalidator.service;
 
-import com.itaubackendchallenge.paswordvalidator.exception.PasswordInvalidException;
-import com.itaubackendchallenge.paswordvalidator.model.Password;
-import com.itaubackendchallenge.paswordvalidator.validator.PasswordValidator;
+import com.itaubackendchallenge.passwordvalidator.exception.PasswordInvalidException;
+import com.itaubackendchallenge.passwordvalidator.model.Password;
+import com.itaubackendchallenge.passwordvalidator.validator.PasswordValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

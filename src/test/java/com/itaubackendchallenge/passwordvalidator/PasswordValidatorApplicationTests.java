@@ -1,4 +1,4 @@
-package com.itaubackendchallenge.paswordvalidator;
+package com.itaubackendchallenge.passwordvalidator;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.itaubackendchallenge.paswordvalidator.exception;
+package com.itaubackendchallenge.passwordvalidator.exception;
 
 import lombok.AllArgsConstructor;
 

@@ -1,4 +1,4 @@
-package com.itaubackendchallenge.paswordvalidator.model;
+package com.itaubackendchallenge.passwordvalidator.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

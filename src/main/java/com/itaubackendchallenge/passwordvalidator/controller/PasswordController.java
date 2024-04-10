@@ -1,7 +1,7 @@
-package com.itaubackendchallenge.paswordvalidator.controller;
+package com.itaubackendchallenge.passwordvalidator.controller;
 
-import com.itaubackendchallenge.paswordvalidator.model.Password;
-import com.itaubackendchallenge.paswordvalidator.service.PasswordService;
+import com.itaubackendchallenge.passwordvalidator.model.Password;
+import com.itaubackendchallenge.passwordvalidator.service.PasswordService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
