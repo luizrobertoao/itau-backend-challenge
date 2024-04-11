@@ -1,13 +1,11 @@
 package com.itaubackendchallenge.passwordvalidator.controller;
 
+import com.itaubackendchallenge.passwordvalidator.exception.PasswordInvalidException;
 import com.itaubackendchallenge.passwordvalidator.model.PasswordRequest;
 import com.itaubackendchallenge.passwordvalidator.service.PasswordService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("v01/password-validations")
@@ -16,8 +14,12 @@ public class PasswordController {
     private final PasswordService passwordService;
 
     @PostMapping
-    public ResponseEntity<Void> validatePassword(@RequestBody PasswordRequest password) {
-        passwordService.validate(password);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Boolean> validatePassword(@RequestBody PasswordRequest password) {
+        return ResponseEntity.ok(passwordService.validate(password));
+    }
+
+    @ExceptionHandler(PasswordInvalidException.class)
+    public ResponseEntity<Boolean> handlePasswordInvalidException(PasswordInvalidException e) {
+        return ResponseEntity.badRequest().body(false);
     }
 }

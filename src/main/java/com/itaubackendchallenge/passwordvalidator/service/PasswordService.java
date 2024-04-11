@@ -11,9 +11,11 @@ import org.springframework.stereotype.Service;
 public class PasswordService {
     private final PasswordValidator passwordValidator;
 
-    public void validate(PasswordRequest password) {
-        if (!passwordValidator.isValid(password)) {
+    public boolean validate(PasswordRequest password) {
+        boolean isValid = passwordValidator.isValid(password);
+        if (!isValid) {
             throw new PasswordInvalidException("Invalid password");
         }
+        return true;
     }
 }
