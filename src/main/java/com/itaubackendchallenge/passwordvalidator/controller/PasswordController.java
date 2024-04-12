@@ -29,9 +29,4 @@ public class PasswordController {
     public ResponseEntity<Boolean> validatePassword(@RequestBody PasswordRequest password) {
         return ResponseEntity.ok(passwordService.validate(password));
     }
-
-    @ExceptionHandler(PasswordInvalidException.class)
-    public ResponseEntity<Boolean> handlePasswordInvalidException(PasswordInvalidException e) {
-        return ResponseEntity.badRequest().body(false);
-    }
 }
